@@ -1,0 +1,26 @@
+/* ================================================
+   PAGE TRANSITION — Minsky style
+   Pure content fade + slide. No overlay. No curtain.
+   ================================================ */
+
+/* Entrance: content starts invisible & 20px below */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* JS adds this class on DOMContentLoaded */
+.page-enter.page-entered {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Exit: content lifts & fades before navigation */
+.page-exiting {
+  opacity: 0 !important;
+  transform: translateY(-14px) !important;
+  transition: opacity 0.28s ease, transform 0.28s ease !important;
+  pointer-events: none;
+}
