@@ -1,8 +1,8 @@
-/* ================================================
-   CodeVibeX — Portfolio Styles
+﻿/* ================================================
+   CodeVibeX â€” Portfolio Styles
    ================================================ */
 
-/* ── Filter Bar ── */
+/* â”€â”€ Filter Bar â”€â”€ */
 .portfolio-filters {
   display: flex;
   gap: 0.5rem;
@@ -36,14 +36,14 @@
   box-shadow: 0 4px 16px var(--accent-glow);
 }
 
-/* ── Portfolio Grid ── */
+/* â”€â”€ Portfolio Grid â”€â”€ */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
-/* ── Portfolio Card ── */
+/* â”€â”€ Portfolio Card â”€â”€ */
 .portfolio-card {
   position: relative;
   background: var(--bg-card);
@@ -62,7 +62,7 @@
               0 0 0 1px var(--accent-dim);
 }
 
-/* ── Browser Chrome Preview ── */
+/* â”€â”€ Browser Chrome Preview â”€â”€ */
 .portfolio-preview {
   position: relative;
   overflow: hidden;
@@ -126,7 +126,7 @@
   height: 14px;
 }
 
-/* ── iFrame Viewport ── */
+/* â”€â”€ iFrame Viewport â”€â”€ */
 .iframe-wrap {
   position: relative;
   width: 100%;
@@ -160,7 +160,7 @@
   display: block;
 }
 
-/* ── Portfolio Info ── */
+/* â”€â”€ Portfolio Info â”€â”€ */
 .portfolio-info {
   padding: 1.5rem 1.75rem 2rem;
   flex: 1;
@@ -239,7 +239,7 @@
   stroke-width: 2;
 }
 
-/* ── Enterprise Section ── */
+/* â”€â”€ Enterprise Section â”€â”€ */
 .enterprise-section {
   border-top: 1px solid var(--border-card);
 }
@@ -312,7 +312,7 @@
   font-style: italic;
 }
 
-/* ── CRM Dashboard Mockup ── */
+/* â”€â”€ CRM Dashboard Mockup â”€â”€ */
 .enterprise-visual {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
@@ -440,8 +440,15 @@
   to   { transform: scaleY(1); }
 }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 1024px) {
+  .enterprise-info h3 {
+    display: none;
+  }
+  .enterprise-visual {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
@@ -463,11 +470,14 @@
   }
 
   .crm-mockup {
-    height: 280px;
-  }
+      height: 280px;
+      min-width: 600px;
+    }
 
   .crm-sidebar {
     width: 100px;
     min-width: 100px;
   }
 }
+
+
