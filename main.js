@@ -1,4 +1,4 @@
-﻿/* ================================================
+/* ================================================
    CodeVibeX â€” Main JavaScript
    Scroll Reveal | Typewriter | Mobile Nav
    Page Transitions (Minsky â€” content fade/slide)
@@ -7,7 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ================================================
-     AUTO-SELECT SERVICE FROM URL
+     AUTO-SELECT SERVICE (URL OR BUTTON CLICK)
      ================================================ */
   const urlParams = new URLSearchParams(window.location.search);
   const requestedService = urlParams.get('service');
@@ -20,6 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+
+  // Handle on-page "Get a Quote" buttons
+  document.querySelectorAll('.get-quote-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const service = btn.getAttribute('data-service');
+      const select = document.getElementById('service');
+      if (select && service) {
+        const option = Array.from(select.options).find(opt => opt.value === service);
+        if (option) option.selected = true;
+      }
+      
+      const formSection = document.getElementById('contact-form');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+        // Optional: slight focus indication
+        setTimeout(() => select.focus(), 600);
+      }
+    });
+  });
 /* ================================================
      SMOOTH SCROLLING (Lenis) - Minsky Style
      ================================================ */
