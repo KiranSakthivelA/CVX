@@ -445,10 +445,7 @@
   .enterprise-info h3 {
     display: none;
   }
-  .enterprise-visual {
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
+  
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
@@ -470,14 +467,48 @@
   }
 
   .crm-mockup {
-      height: 280px;
-      min-width: 600px;
-    }
+    flex-direction: column;
+    height: 380px;
+  }
 
   .crm-sidebar {
-    width: 100px;
-    min-width: 100px;
+    width: 100%;
+    min-width: unset;
+    flex-direction: row;
+    justify-content: space-around;
+    border-right: none;
+    border-bottom: 1px solid var(--border-card);
+    padding: 0.75rem 0.5rem;
+  }
+  .crm-nav-item {
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.25rem;
+    font-size: 0.65rem;
+    text-align: center;
+  }
+  .crm-nav-item svg {
+    width: 16px;
+    height: 16px;
+  }
+  .crm-content {
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+  .crm-stat-row {
+    gap: 0.4rem;
+  }
+  .crm-stat {
+    padding: 0.5rem;
+  }
+  .crm-stat-val {
+    font-size: 1.1rem;
+  }
+  .crm-stat-lbl {
+    font-size: 0.55rem;
   }
 }
+
+
 
 
