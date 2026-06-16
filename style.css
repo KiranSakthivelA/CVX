@@ -1245,7 +1245,8 @@ header {
   .hero-desc    { font-size: 0.95rem; margin-bottom: 2rem; }
   .hero-actions { gap: 0.75rem; }
   .hero-actions .btn { padding: 0.65rem 1.25rem; font-size: 0.9rem; }
-  .hero-icons-row { gap: 1rem; margin-top: 2.5rem; padding-top: 1.75rem; flex-wrap: wrap; justify-content: center; }
+  .hero-icons-row { gap: 1.5rem 1rem; margin-top: 2.5rem; padding-top: 1.75rem; flex-wrap: wrap; justify-content: center; }
+  .hero-icon-item { flex: 0 0 28%; text-align: center; }
   .hero-icons-row::-webkit-scrollbar { display: none; }
   .hero-icon-label { font-size: 0.65rem; }
 
@@ -1658,6 +1659,7 @@ header {
 @keyframes terminalType {
   to { opacity: 1; }
 }
+
 
 
 
