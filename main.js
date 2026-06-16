@@ -152,7 +152,53 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(type, 1200);
   }
 
-    /* ================================================
+      /* ================================================
+     WEB3FORMS AJAX SUBMISSION
+     ================================================ */
+  const contactForms = document.querySelectorAll('.contact-form');
+  contactForms.forEach(form => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending...';
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+      
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          submitBtn.innerHTML = 'Message Sent! ✓';
+          submitBtn.style.backgroundColor = 'var(--accent)';
+          submitBtn.style.borderColor = 'var(--accent)';
+          form.reset();
+        } else {
+          submitBtn.innerHTML = 'Error. Try Again.';
+          submitBtn.disabled = false;
+        }
+      } catch (error) {
+        submitBtn.innerHTML = 'Error. Try Again.';
+        submitBtn.disabled = false;
+      }
+      
+      setTimeout(() => {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+        submitBtn.style.backgroundColor = '';
+        submitBtn.style.borderColor = '';
+      }, 5000);
+    });
+  });
+
+  /* ================================================
      SAME-PAGE ANCHOR SCROLLING
      ================================================ */
   document.querySelectorAll('a[href]').forEach(link => {
@@ -226,6 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
 
 
 
