@@ -1066,7 +1066,7 @@ header {
 .site-footer {
   background: var(--bg);
   border-top: 1px solid var(--border-card);
-  padding: 4rem 0 1rem;
+  padding: 4rem 0 0.5rem;
   font-size: 0.95rem;
   position: relative;
   overflow: hidden;
@@ -1167,6 +1167,8 @@ header {
 .footer-col a:hover {
   color: var(--text-primary);
 }
+
+.footer-copy { margin: 0; }
 
 .footer-bottom {
   display: flex;
@@ -1279,7 +1281,9 @@ header {
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
   }
-  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .footer-copy { margin: 0; }
+
+.footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
   .footer-legal {
     justify-content: center;
     flex-wrap: wrap;
@@ -1654,6 +1658,7 @@ header {
 @keyframes terminalType {
   to { opacity: 1; }
 }
+
 
 
 
