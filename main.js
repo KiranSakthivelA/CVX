@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const words = [
       'Landing Pages.',
       'Admin Consoles.',
-      'Web Applications.',
+      'Web Apps.',
       'Custom CRMs.',
       'Integrations.',
     ];
@@ -226,5 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
 
 
