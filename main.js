@@ -1,7 +1,7 @@
-/* ================================================
-   CodeVibeX â€” Main JavaScript
+﻿/* ================================================
+   CodeVibeX Ã¢â‚¬â€ Main JavaScript
    Scroll Reveal | Typewriter | Mobile Nav
-   Page Transitions (Minsky â€” content fade/slide)
+   Page Transitions (Minsky Ã¢â‚¬â€ content fade/slide)
    ================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ================================================
-     PAGE TRANSITION â€” Minsky style
+     PAGE TRANSITION Ã¢â‚¬â€ Minsky style
      Enter: main content fades + slides up
      Exit:  main content lifts + fades, then navigate
      ================================================ */
@@ -152,6 +152,41 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(type, 1200);
   }
 
+    /* ================================================
+     SAME-PAGE ANCHOR SCROLLING
+     ================================================ */
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    
+    link.addEventListener('click', e => {
+      // Create URL object to compare pathnames
+      const url = new URL(link.href, window.location.href);
+      
+      // If it's a link to a hash on the CURRENT page
+      if (url.pathname === window.location.pathname && url.hash) {
+        const target = document.querySelector(url.hash);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+          
+          // Also close mobile nav if it's open
+          const navLinks = document.querySelector('.nav-links');
+          const hamburger = document.querySelector('.nav-hamburger');
+          if (navLinks && navLinks.classList.contains('open')) {
+            navLinks.classList.remove('open');
+            if (hamburger) {
+              hamburger.querySelectorAll('span').forEach(s => {
+                s.style.transform = '';
+                s.style.opacity = '';
+              });
+            }
+          }
+        }
+      }
+    });
+  });
+
   /* ================================================
      MOBILE NAV
      ================================================ */
@@ -191,4 +226,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
 
