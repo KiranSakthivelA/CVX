@@ -358,13 +358,13 @@ header {
 
 .hero-heading {
   opacity: 0;
-  animation: fadeInUp 0.9s var(--ease) 0.4s forwards;
+  animation: fadeInUp 0.6s var(--ease) 0.1s forwards;
   margin-bottom: -0.5rem;
 }
 
 .hero-heading-line2 {
   opacity: 0;
-  animation: fadeInUp 0.9s var(--ease) 0.55s forwards;
+  animation: fadeInUp 0.6s var(--ease) 0.2s forwards;
   margin-bottom: 2.5rem;
 }
 
@@ -409,7 +409,7 @@ header {
   line-height: 1.75;
   margin-bottom: 3rem;
   opacity: 0;
-  animation: fadeInUp 0.9s var(--ease) 0.7s forwards;
+  animation: fadeInUp 0.6s var(--ease) 0.3s forwards;
 }
 
 .hero-actions {
@@ -418,7 +418,7 @@ header {
   gap: 1.25rem;
   flex-wrap: wrap;
   opacity: 0;
-  animation: fadeInUp 0.9s var(--ease) 0.85s forwards;
+  animation: fadeInUp 0.6s var(--ease) 0.4s forwards;
 }
 
 /* Hero tool icons row */
@@ -1659,6 +1659,7 @@ header {
 @keyframes terminalType {
   to { opacity: 1; }
 }
+
 
 
 
