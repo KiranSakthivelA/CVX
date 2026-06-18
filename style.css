@@ -22,9 +22,9 @@ html.lenis, html.lenis body {
 }
 
 /* ================================================
-   CodeVibeX ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â Minsky-Inspired Design System
+   CodeVibeX – Minsky-Inspired Design System
    Fonts: Outfit (headings) + Space Grotesk (body)
-   Palette: #0A0A1A bg, #5D5FEF primary accent
+   Palette: #0A0A0A bg, #0057FF primary accent
    ================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
@@ -32,22 +32,22 @@ html.lenis, html.lenis body {
 /* ---- CSS Variables ---- */
 :root {
   /* Background Layers */
-  --bg:           #09090B;
-  --bg-card:      #0E0E11;
-  --bg-card-hover:#141418;
-  --bg-nav:       rgba(9, 9, 11, 0.88);
+  --bg:           #0A0A0A;
+  --bg-card:      #101010;
+  --bg-card-hover:#181818;
+  --bg-nav:       rgba(10, 10, 10, 0.88);
 
-  /* Blue Palette ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â #0057FF */
+  /* Blue Palette – #0057FF */
   --accent:       #0057FF;
   --accent-light: #3375FF;
   --accent-dim:   rgba(0, 87, 255, 0.14);
   --accent-glow:  rgba(0, 87, 255, 0.32);
 
-  /* Text Hierarchy */
+  /* Text Hierarchy – pure neutral greys, no violet bias */
   --text-primary:   #FFFFFF;
-  --text-secondary: #8E92A3;
-  --text-muted:     #4D5163;
-  --text-dim:       #2B2E3D;
+  --text-secondary: #909094;
+  --text-muted:     #555558;
+  --text-dim:       #2E2E30;
 
   /* Borders */
   --border:         rgba(0, 87, 255, 0.14);
