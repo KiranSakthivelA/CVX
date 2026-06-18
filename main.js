@@ -1,4 +1,4 @@
-﻿/* ================================================
+/* ================================================
    CodeVibeX Ã¢â‚¬â€ Main JavaScript
    Scroll Reveal | Typewriter | Mobile Nav
    Page Transitions (Minsky Ã¢â‚¬â€ content fade/slide)
@@ -238,24 +238,48 @@ document.addEventListener('DOMContentLoaded', () => {
      ================================================ */
   const hamburger = document.querySelector('.nav-hamburger');
   const navLinks  = document.querySelector('.nav-links');
+  const navBackdrop = document.querySelector('.nav-backdrop');
+  const navClose  = document.querySelector('.nav-close');
+
+  function openNav() {
+    navLinks.classList.add('open');
+    if (navBackdrop) navBackdrop.classList.add('open');
+    const spans = hamburger.querySelectorAll('span');
+    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+    spans[1].style.opacity   = '0';
+    spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+  }
+
+  function closeNav() {
+    navLinks.classList.remove('open');
+    if (navBackdrop) navBackdrop.classList.remove('open');
+    const spans = hamburger.querySelectorAll('span');
+    spans[0].style.transform = '';
+    spans[1].style.opacity   = '';
+    spans[2].style.transform = '';
+  }
 
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      const spans = hamburger.querySelectorAll('span');
-      const open  = navLinks.classList.contains('open');
-      spans[0].style.transform = open ? 'rotate(45deg) translate(5px, 5px)' : '';
-      spans[1].style.opacity   = open ? '0' : '';
-      spans[2].style.transform = open ? 'rotate(-45deg) translate(5px, -5px)' : '';
+      if (navLinks.classList.contains('open')) {
+        closeNav();
+      } else {
+        openNav();
+      }
     });
+
+    // Close button inside sidebar
+    if (navClose) {
+      navClose.addEventListener('click', closeNav);
+    }
+
+    // Clicking backdrop also closes nav
+    if (navBackdrop) {
+      navBackdrop.addEventListener('click', closeNav);
+    }
+
     navLinks.querySelectorAll('.nav-link').forEach(l => {
-      l.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        hamburger.querySelectorAll('span').forEach(s => {
-          s.style.transform = '';
-          s.style.opacity   = '';
-        });
-      });
+      l.addEventListener('click', closeNav);
     });
   }
 

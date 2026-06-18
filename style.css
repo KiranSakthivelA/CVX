@@ -749,6 +749,8 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
     align-items: flex-start;
+    position: relative;
+    z-index: 1;
   }
   /* ================================================
      PROCESS GRID
@@ -962,6 +964,25 @@ header {
 .subpage-hero {
   padding-top: calc(var(--nav-height) + 4rem);
   padding-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.subpage-hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -100px;
+  width: 600px;
+  height: 500px;
+  background: radial-gradient(ellipse 50% 50% at 70% 30%, rgba(0, 87, 255, 0.09) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.subpage-hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .subpage-hero h1 {
@@ -979,6 +1000,20 @@ header {
 .contact-section {
   padding-top: calc(var(--nav-height) + 3rem);
   padding-bottom: 5rem;
+  position: relative;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0, 87, 255, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* ================================================
@@ -1066,7 +1101,7 @@ header {
 .site-footer {
   background: var(--bg);
   border-top: 1px solid var(--border-card);
-  padding: 4rem 0 0.5rem;
+  padding: 4rem 0 0;
   font-size: 0.95rem;
   position: relative;
   overflow: hidden;
@@ -1174,7 +1209,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1.25rem;
+  padding: 1.25rem 0 2.5rem;
   border-top: 1px solid var(--border-card);
   color: var(--text-muted);
   font-size: 0.85rem;
@@ -1315,16 +1350,29 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border-card);
-    margin-bottom: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 87, 255, 0.15);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
   }
   .nav-close {
-    background: none;
-    border: none;
-    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0.4rem;
+    border-radius: 8px;
+    transition: all 0.2s var(--ease);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-close:hover {
+    background: rgba(0, 87, 255, 0.15);
+    border-color: rgba(0, 87, 255, 0.3);
+    color: var(--text-primary);
   }
 
   .nav-links {
@@ -1332,32 +1380,94 @@ header {
     top: 0;
     left: -100%;
     width: 85%;
-    max-width: 400px;
+    max-width: 360px;
     height: 100vh;
-    background: var(--bg);
+    background: linear-gradient(160deg, #0d0d14 0%, #0a0a10 40%, #080c14 100%);
     padding: 2rem 1.5rem;
     gap: 0;
     z-index: 99;
     flex-direction: column;
-    border-right: 1px solid var(--border-card);
+    border-right: 1px solid rgba(0, 87, 255, 0.18);
     overflow-y: auto;
-    transition: left 0.4s var(--ease);
+    transition: left 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.42s var(--ease);
     border-radius: 0;
     align-items: stretch;
+    box-shadow: none;
+  }
+
+  /* Blue glow pseudo-element inside the panel */
+  .nav-links::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: -60px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(0, 87, 255, 0.18) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .nav-links::after {
+    content: '';
+    position: absolute;
+    bottom: 60px;
+    right: -40px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(51, 117, 255, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
   }
 
   .nav-links.open {
     display: flex;
     left: 0;
+    box-shadow: 4px 0 40px rgba(0, 0, 0, 0.6), 0 0 60px rgba(0, 87, 255, 0.08);
   }
 
   .nav-links .nav-link {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-card);
-    font-size: 1.1rem;
-    border-radius: 0;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 8px;
     width: 100%;
     background: transparent;
+    color: var(--text-secondary);
+    position: relative;
+    z-index: 1;
+    transition: all 0.22s var(--ease);
+    letter-spacing: 0.01em;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .nav-links .nav-link:hover {
+    color: var(--text-primary);
+    background: rgba(0, 87, 255, 0.08);
+    padding-left: 1.5rem;
+    border-color: rgba(0, 87, 255, 0.15);
+  }
+
+  .nav-links .nav-link.active {
+    color: var(--accent-light);
+    background: rgba(0, 87, 255, 0.12);
+    border-left: 3px solid var(--accent);
+    padding-left: 1.25rem;
+    font-weight: 500;
+  }
+
+  .nav-links .nav-link.active::after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    box-shadow: 0 0 8px rgba(51, 117, 255, 0.8);
   }
 
   .nav-links .nav-link + .nav-link::before {
@@ -1365,9 +1475,15 @@ header {
   }
 }
 
+/* Hide the sidebar branding header on desktop (it's only for mobile panel) */
+@media (min-width: 769px) {
   .nav-sidebar-header {
     display: none;
   }
+  .nav-mobile-cta {
+    display: none;
+  }
+}
 
 /* ================================================
    CARD FEATURES LIST
@@ -1660,9 +1776,27 @@ header {
   to { opacity: 1; }
 }
 
+/* ================================================
+   MOBILE NAV CTA + LOGO BRANDING
+   ================================================ */
+.nav-mobile-cta {
+  margin-top: auto;
+  padding-top: 2rem;
+  position: relative;
+  z-index: 1;
+}
 
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
 
-
+.nav-logo img {
+  height: 36px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
 
 
 
