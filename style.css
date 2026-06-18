@@ -1,4 +1,4 @@
-﻿/* ================================================
+/* ================================================
    LENIS SMOOTH SCROLL REQUIRED CSS
    ================================================ */
 html.lenis, html.lenis body {
@@ -32,10 +32,10 @@ html.lenis, html.lenis body {
 /* ---- CSS Variables ---- */
 :root {
   /* Background Layers */
-  --bg:           #0A0A14;
-  --bg-card:      #0E0E1C;
-  --bg-card-hover:#121228;
-  --bg-nav:       rgba(10, 10, 20, 0.88);
+  --bg:           #08090E;
+  --bg-card:      #0C0D14;
+  --bg-card-hover:#12141D;
+  --bg-nav:       rgba(8, 9, 14, 0.88);
 
   /* Blue Palette ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â #0057FF */
   --accent:       #0057FF;
@@ -45,9 +45,9 @@ html.lenis, html.lenis body {
 
   /* Text Hierarchy */
   --text-primary:   #FFFFFF;
-  --text-secondary: #8B8CA8;
-  --text-muted:     #4A4A6A;
-  --text-dim:       #2A2A40;
+  --text-secondary: #8E92A3;
+  --text-muted:     #4D5163;
+  --text-dim:       #2B2E3D;
 
   /* Borders */
   --border:         rgba(0, 87, 255, 0.14);
@@ -798,7 +798,7 @@ header {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 3.5rem;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.1);
     line-height: 1;
     position: absolute;
     top: 1.5rem;
@@ -808,7 +808,7 @@ header {
   }
   
   .process-card:hover .process-number {
-    color: rgba(0, 87, 255, 0.1);
+    color: rgba(0, 87, 255, 0.2);
   }
   
   .process-title {
